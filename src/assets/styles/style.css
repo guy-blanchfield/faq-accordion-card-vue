@@ -28,7 +28,9 @@
     --faq-width-desktop: min(925px, 88vw);
 
     --faq-height-mobile: 560px;
-    --faq-height-desktop: 520px;
+    /* --faq-height-desktop: 520px; */
+    /* bit more height on desktop for the multiple panel expansion version */
+    --faq-height-desktop: 700px;
     
     --faq-padding-top-desktop: 6rem;
     /* so the focus outline doesn't look ugly */
@@ -90,7 +92,9 @@ h1 {
     width: var(--faq-width-mobile);
     /* this probably needs a min-height now that it's one */
     /* item active at a time and animated */
-    min-height: var(--faq-height-mobile);
+    /* maybe not for the multiple-panel-expansion version */
+    /* but doesn't really matter */
+    /* min-height: var(--faq-height-mobile); */
     background-color: var(--neutral-white);
     /* background probably belongs on the illustration div */
     /* background: url(../images/bg-pattern-mobile.svg) no-repeat top center var(--neutral-white); */

@@ -14,15 +14,21 @@ const ddEl = ref(null)
 // declare the props
 const props = defineProps({
     itemIndex: Number,
-    faq: Object,
-    active: Boolean
+    faq: Object
 })
 
 // destructure the question and answer from faq
 const { question, answer } = props.faq
 
-// declare the emits that we're going to use
-const emit = defineEmits(['itemClick'])
+// don't need emits in the multiple-panel-expansion
+
+// do need some state here for whether or not this item is active
+const active = ref(false)
+
+const handleClick = () => {
+    console.log(`clicky wicky and active being set to ${!active.value}`)
+    active.value = !active.value
+}
 
 
 </script>
@@ -31,7 +37,7 @@ const emit = defineEmits(['itemClick'])
 
     <dt class="accordion-dt">
         <button
-            @click="$emit('itemClick', itemIndex)"
+            @click="handleClick"
             type="button"
             :aria-expanded="active ? 'true' : 'false'"
             :aria-controls="`accordion-dd-content-${itemIndex}`"
